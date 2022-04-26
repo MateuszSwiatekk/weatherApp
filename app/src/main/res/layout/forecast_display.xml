@@ -16,21 +16,22 @@
         <TextView
             android:id="@+id/dateday1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/weatherday1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <ImageView
             android:id="@+id/iconday1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
             tools:srcCompat="@tools:sample/avatars" />
 
     </LinearLayout>
@@ -45,21 +46,22 @@
         <TextView
             android:id="@+id/dateday2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/weatherday2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <ImageView
             android:id="@+id/iconday2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
@@ -73,21 +75,22 @@
         <TextView
             android:id="@+id/dateday3"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/weatherday3"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
 
         <ImageView
             android:id="@+id/iconday3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="3"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 

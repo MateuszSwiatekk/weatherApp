@@ -70,7 +70,7 @@ class WeatherActivity : AppCompatActivity() {
                     val img = findViewById<ImageView>(iconDays[i])
                     Picasso.get()
                         .load("https://openweathermap.org/img/wn/" + icon + "@2x.png")
-                        .resize(100, 100)
+                        .resize(60, 60)
                         .into(img)
                 }
                 val updateTime = response.getJSONObject("current").getLong("dt")
