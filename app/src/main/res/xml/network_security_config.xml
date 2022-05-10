@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-<<<<<<< HEAD
-        <domain includeSubdomains="true">your_site_domain.com</domain>
-=======
         <domain includeSubdomains="true">https://openweathermap.org/</domain>
->>>>>>> 8fbef5d6d9f3d36854b215aa4d5d600ed6d319b3
     </domain-config>
 </network-security-config>
