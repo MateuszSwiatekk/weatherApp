@@ -21,7 +21,8 @@ class Description : AppCompatActivity() {
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM DESCRIPTIONS WHERE DESCRIPTIONID ="+plant_id,null)
 
-        supportActionBar?.hide()
+        val actionBar = supportActionBar
+        actionBar!!.title = "Plant description"
 
         if(query.moveToNext())
         arrayListRepos.add(query.getString(1))

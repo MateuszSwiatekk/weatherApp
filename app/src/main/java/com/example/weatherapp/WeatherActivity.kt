@@ -26,6 +26,9 @@ class WeatherActivity : AppCompatActivity() {
         val lon: String? = intent.getStringExtra("lon")
         getJsonData(lat,lon)
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "Weather"
+
     }
 
     override fun onBackPressed() {

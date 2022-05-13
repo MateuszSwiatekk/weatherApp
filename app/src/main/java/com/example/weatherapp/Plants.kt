@@ -15,7 +15,8 @@ class Plants : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plants)
 
-        supportActionBar?.hide()
+        val actionBar = supportActionBar
+        actionBar!!.title = "Plants"
 
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
