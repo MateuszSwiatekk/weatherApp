@@ -33,7 +33,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="nosensor" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:exported="true"
             android:screenOrientation="nosensor">
             <intent-filter>
@@ -42,6 +42,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:orientation="vertical"
+            android:parentActivityName=".SplashScreen"
+            android:screenOrientation="nosensor" />
     </application>
 
 </manifest>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">weatherApp</string>
+    <string name="app_name">Plant Care</string>
     <string name="Error">Something went wrong</string>
     <string name="current_temp">Current temperature : %1$s</string>
     <string name="day_temp">%1$s °C</string>

@@ -15,6 +15,8 @@ class Plants : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plants)
 
+        supportActionBar?.hide()
+
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM PLANTS",null)

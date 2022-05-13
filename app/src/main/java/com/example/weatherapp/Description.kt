@@ -21,6 +21,8 @@ class Description : AppCompatActivity() {
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM DESCRIPTIONS WHERE DESCRIPTIONID ="+plant_id,null)
 
+        supportActionBar?.hide()
+
         if(query.moveToNext())
         arrayListRepos.add(query.getString(1))
 

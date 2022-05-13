@@ -9,6 +9,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.hide()
+
     }
     fun weatherClick(view:View){
         val intent = Intent(this,GetWeatherLocation::class.java)
@@ -18,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,Plants::class.java)
         startActivity(intent)
     }
+
+
 
     override fun onBackPressed() {
         finish()
