@@ -25,8 +25,6 @@ class GetWeatherLocation : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Weather"
 
-
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_weather_location)
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)

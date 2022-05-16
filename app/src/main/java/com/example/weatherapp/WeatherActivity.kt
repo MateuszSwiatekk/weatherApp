@@ -27,7 +27,7 @@ class WeatherActivity : AppCompatActivity() {
         getJsonData(lat,lon)
 
         val actionBar = supportActionBar
-        actionBar!!.title = "Weather"
+        actionBar!!.title = "Weather Forecast"
 
     }
 
@@ -53,13 +53,13 @@ class WeatherActivity : AppCompatActivity() {
             queue.add(jsonRequest)
     }
 
-    val dateDays = arrayOf(R.id.dateday1, R.id.dateday2, R.id.dateday3)
-    val weatherDays = arrayOf(R.id.weatherday1, R.id.weatherday2, R.id.weatherday3)
-    val iconDays = arrayOf(R.id.iconday1, R.id.iconday2, R.id.iconday3)
+    val dateDays = arrayOf(R.id.dateday1, R.id.dateday2, R.id.dateday3, R.id.dateday4, R.id.dateday5, R.id.dateday6, R.id.dateday7)
+    val weatherDays = arrayOf(R.id.weatherday1, R.id.weatherday2, R.id.weatherday3, R.id.weatherday4, R.id.weatherday5, R.id.weatherday6, R.id.weatherday7)
+    val iconDays = arrayOf(R.id.iconday1, R.id.iconday2, R.id.iconday3 , R.id.iconday4, R.id.iconday5, R.id.iconday6, R.id.iconday7)
 
     private fun setValues(response: JSONObject) {
             try {
-                for (i in 0..2) {
+                for (i in 0..6) {
                     val daily = response.getJSONArray("daily").getJSONObject(i)?.getJSONObject("temp")
                     val icon = response.getJSONArray("daily").getJSONObject(i)?.getJSONArray("weather")?.getJSONObject(0)?.getString("icon")
                     val temperature = daily?.getDouble("day")?.toInt().toString()
