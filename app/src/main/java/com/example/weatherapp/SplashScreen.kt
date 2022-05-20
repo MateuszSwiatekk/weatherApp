@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 
 class SplashScreen : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         supportActionBar?.hide()
+        window.statusBarColor = ContextCompat.getColor(this, R.color.whiteaf)
 
         ivnote = findViewById(R.id.iv_note)
         ivnote.alpha=0f

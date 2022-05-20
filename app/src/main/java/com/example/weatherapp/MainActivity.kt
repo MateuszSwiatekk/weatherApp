@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,8 +12,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar?.hide()
+        window.statusBarColor = ContextCompat.getColor(this, R.color.whiteaf)
+
 
     }
+
+    fun plantTypeSelector(view:View){
+        val intent = Intent(this,PlantTypeSelector::class.java)
+        startActivity(intent)
+    }
+
     fun weatherClick(view:View){
         val intent = Intent(this,GetWeatherLocation::class.java)
         startActivity(intent)
@@ -21,9 +30,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,Plants::class.java)
         startActivity(intent)
     }
-
-
-
     override fun onBackPressed() {
         finish()
     }

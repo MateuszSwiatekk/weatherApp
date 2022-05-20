@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import android.widget.Toast.makeText
+import androidx.core.content.ContextCompat
 
 class Description : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class Description : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Plant description"
+        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
         if(query.moveToNext())
         arrayListRepos.add(query.getString(1))

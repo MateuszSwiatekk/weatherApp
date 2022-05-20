@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -28,6 +29,7 @@ class WeatherActivity : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Weather Forecast"
+        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
     }
 

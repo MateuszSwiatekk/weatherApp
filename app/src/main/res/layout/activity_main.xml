@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/flowerbackground"
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -16,49 +17,84 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/weatherBut"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:background="#4CAF50"
-            android:onClick="weatherClick"
-            android:text="Weather" />
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:background="#4CAF50"
+            android:background="@color/whiteaf"
+            android:drawableTop="@mipmap/ic_blackflower"
             android:onClick="plantsClick"
-            android:text="Plants" />
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@color/whiteaf"
+            android:drawableTop="@mipmap/ic_blackphoto"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/weatherBut"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@color/whiteaf"
+            android:drawableTop="@mipmap/ic_blacksun"
+            android:onClick="weatherClick"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="Upcoming tasks"
-        android:textSize="34sp"
-        android:visibility="visible"
-        app:layout_constraintLeft_toLeftOf="@id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Today's tasks"
-        android:textSize="34sp"
-        android:visibility="visible"
+        android:layout_marginTop="24dp"
+        android:text="Plant Care"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:drawableBottomCompat="@mipmap/ic_launcher"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/newplantbt"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/whiteaf"
+        android:drawableStart="@mipmap/ic_blackleaf"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="plantTypeSelector"
+        android:text="Add new plant"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/upcomingtasksbt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upcomingtasksbt"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="140dp"
+        android:background="@color/whiteaf"
+        android:drawableStart="@mipmap/ic_blacktask"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Upcoming tasks"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

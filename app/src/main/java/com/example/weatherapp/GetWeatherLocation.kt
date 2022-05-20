@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.util.*
@@ -24,6 +25,7 @@ class GetWeatherLocation : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Weather"
+        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_weather_location)

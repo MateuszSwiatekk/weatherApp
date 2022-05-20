@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 
 class Plants : AppCompatActivity() {
 
@@ -17,6 +18,7 @@ class Plants : AppCompatActivity() {
 
         val actionBar = supportActionBar
         actionBar!!.title = "Plants"
+        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
