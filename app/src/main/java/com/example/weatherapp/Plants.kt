@@ -25,7 +25,8 @@ class Plants : AppCompatActivity() {
         var query=db.rawQuery("SELECT * FROM PLANTS",null)
 
         while(query.moveToNext()) {
-            arrayListRepos.add(query.getString(1))
+            var plantName=query.getString(1)
+            arrayListRepos.add(getString(plantName.toInt()))
         }
         val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
             this,

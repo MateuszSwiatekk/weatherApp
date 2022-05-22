@@ -18,7 +18,7 @@ class Description : AppCompatActivity() {
         setContentView(R.layout.activity_description)
         val plant_id=intent.getStringExtra("plant_id")
         makeText(applicationContext,plant_id,Toast.LENGTH_SHORT).show()
-        var helper=DBDescription(applicationContext)
+        var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM DESCRIPTIONS WHERE DESCRIPTIONID ="+plant_id,null)
 

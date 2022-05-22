@@ -3,4 +3,19 @@
     <string name="Error">Something went wrong</string>
     <string name="current_temp">Current temperature : %1$s</string>
     <string name="day_temp">%1$s °C</string>
+    <string name="plantName1">Aglaonema Zmienna</string>
+    <string name="plantName2">Ardizja Karbowana</string>
+    <string name="plantName3">Szafirek Armeński</string>
+    <string name="plantName4">Hiacynt</string>
+    <string name="plantName5">Tulipan</string>
+    <string name="plantName6">Irys Żółty</string>
+    <string name="plantName7">Galtonia Biaława</string>
+    <string name="plantName8">Cebulica Syberyjska</string>
+    <string name="plantName9">Szafirek Groniasty</string>
+    <string name="plantName10">Frezja</string>
+    <string name="plantName11">Begonia Bulwiasta</string>
+    <string name="plantName12">Kamasja</string>
+    <string name="plantName13">Zawilec Wieńcowy</string>
+    <string name="plantName14">Fitonia</string>
+
 </resources>
