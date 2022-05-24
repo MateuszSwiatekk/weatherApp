@@ -40,6 +40,8 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,1) {
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription12+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription13+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription14+")")
+
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {

@@ -88,6 +88,7 @@
         android:drawableStart="@mipmap/ic_blacktask"
         android:insetTop="0dp"
         android:insetBottom="0dp"
+        android:onClick="tasksClick"
         android:text="Upcoming tasks"
         android:textAllCaps="false"
         android:textColor="@color/black"

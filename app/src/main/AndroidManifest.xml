@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp">
         <activity
+            android:name=".dateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".callendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlantTypeSelector"
             android:exported="false" />
         <activity

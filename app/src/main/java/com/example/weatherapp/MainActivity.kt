@@ -26,10 +26,17 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,GetWeatherLocation::class.java)
         startActivity(intent)
     }
+
     fun plantsClick(view: View){
         val intent = Intent(this,Plants::class.java)
         startActivity(intent)
     }
+
+    fun tasksClick(view: View){
+        val intent = Intent(this,callendarActivity::class.java)
+        startActivity(intent)
+    }
+
     override fun onBackPressed() {
         finish()
     }
