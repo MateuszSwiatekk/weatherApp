@@ -26,8 +26,13 @@ class Description : AppCompatActivity() {
         actionBar!!.title = "Plant description"
         window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
-        if(query.moveToNext())
-        arrayListRepos.add(query.getString(1))
+        //if(query.moveToNext())
+        //arrayListRepos.add(query.getString(1))
+
+        while(query.moveToNext()) {
+            var description=query.getString(1)
+            arrayListRepos.add(getString(description.toInt()))
+        }
 
         val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
             this,
