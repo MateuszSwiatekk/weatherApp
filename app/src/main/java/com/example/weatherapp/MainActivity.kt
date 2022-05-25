@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun lightSensorClick(view:View){
+        val intent = Intent(this,LightSensor::class.java)
+        startActivity(intent)
+    }
+
     override fun onBackPressed() {
         finish()
     }

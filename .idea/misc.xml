@@ -3,19 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1425" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_description.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_foto.xml" value="0.25416666666666665" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_get_weather_location.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_plant_type_selector.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_plants.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/activity_weather.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/layout/forecast_display.xml" value="0.22780797101449277" />
-        <entry key="..\:/Alles/Dokumenty/AiR semestr 6/Aplikacje mobilne/weatherApp/app/src/main/res/mipmap-anydpi-v26/grass.xml" value="0.1425" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_description.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_get_weather_location.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_light_sensor.xml" value="0.21557971014492755" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_plant_type_selector.xml" value="0.21557971014492755" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_plants.xml" value="0.22826086956521738" />
@@ -44,9 +36,7 @@
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_description.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_get_weather_location.xml" value="0.2" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_main.xml" value="0.17447916666666666" />
-        <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_plant_type_selector.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_plants.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_splash_screen.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/activity_weather.xml" value="0.20625" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherApp3/app/src/main/res/layout/forecast_display.xml" value="0.20625" />
         <entry key="..\:/Users/msswi/AndroidStudioProjects/weatherAppBackup1/app/src/main/res/drawable/background.xml" value="0.2" />

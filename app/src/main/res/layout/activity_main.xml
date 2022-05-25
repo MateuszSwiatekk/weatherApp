@@ -22,7 +22,8 @@
             android:layout_height="70dp"
             android:layout_weight="1"
             android:background="@color/whiteaf"
-            android:drawableTop="@mipmap/ic_blackflower"
+            android:drawableTop="@mipmap/ic_lightbulb"
+            android:onClick="lightSensorClick"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -64,7 +65,7 @@
         android:id="@+id/newplantbt"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:background="@color/whiteaf"
         android:drawableStart="@mipmap/ic_blackleaf"
         android:insetTop="0dp"
@@ -83,7 +84,7 @@
         android:id="@+id/upcomingtasksbt"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="196dp"
         android:background="@color/whiteaf"
         android:drawableStart="@mipmap/ic_blacktask"
         android:insetTop="0dp"
@@ -96,6 +97,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upcomingtasksbt2"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/whiteaf"
+        android:drawableStart="@mipmap/ic_blackflower"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="My plants"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upcomingtasksbt"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
