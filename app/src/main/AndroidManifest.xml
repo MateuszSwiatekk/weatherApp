@@ -16,9 +16,11 @@
         android:theme="@style/Theme.WeatherApp">
         <activity
             android:name=".LightSensor"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".Foto"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".dateActivity"

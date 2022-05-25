@@ -11,6 +11,9 @@ class callendarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_callendar)
+
+        supportActionBar?.hide()
+
         val callendar=findViewById<CalendarView>(R.id.calendarView)
             callendar.setOnDateChangeListener(object:CalendarView.OnDateChangeListener{
                 override fun onSelectedDayChange(p0: CalendarView, year: Int, month: Int, day: Int) {

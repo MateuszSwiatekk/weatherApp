@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import android.widget.ProgressBar
+import androidx.core.content.ContextCompat
 
 class LightSensor : AppCompatActivity(), SensorEventListener {
 
@@ -22,7 +23,9 @@ class LightSensor : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_light_sensor)
 
-        supportActionBar?.hide()
+        val actionBar = supportActionBar
+        actionBar!!.title = "Light sensor"
+        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
