@@ -27,7 +27,7 @@ class Plants : AppCompatActivity() {
 
         if(plantType == "Garden") {
 
-            var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE Home",null)
+            var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE "+R.string.plantType2,null)
             //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15 OFFSET 15" ,null)
             while(query.moveToNext()) {
                 var plantName=query.getString(1)
@@ -49,7 +49,7 @@ class Plants : AppCompatActivity() {
             }
 
         }else {
-                var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE Garden",null)
+                var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE "+R.string.plantType1,null)
                 //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15",null)
                 while(query.moveToNext()) {
                     var plantName=query.getString(1)

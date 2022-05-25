@@ -73,7 +73,8 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription29+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription30+")")
 
-
+        db?.execSQL("CREATE TABLE TASKS(TASKID INTEGER PRIMARY KEY AUTOINCREMENT,DATE TEXT, TASK TEXT)")
+        db?.execSQL("INSERT INTO TASKS(DATE,TASK) VALUES ('25/4/2022','Fitonia B)')")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {

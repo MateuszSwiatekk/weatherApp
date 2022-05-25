@@ -5,16 +5,15 @@ import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 
-private lateinit var fotobutton : Button
-private lateinit var fotoview : ImageView
-val REQUEST_IMAGE_CAPTURE = 1
 
 class Foto : AppCompatActivity() {
+    private lateinit var fotobutton : Button
+    private lateinit var fotoview : ImageView
+    val REQUEST_IMAGE_CAPTURE = 1
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
