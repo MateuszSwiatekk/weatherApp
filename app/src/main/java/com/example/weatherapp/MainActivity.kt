@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         window.statusBarColor = ContextCompat.getColor(this, R.color.whiteaf)
-
-
     }
 
     fun plantTypeSelector(view:View){
@@ -27,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun plantsClick(view: View){
-        val intent = Intent(this,Plants::class.java)
+    fun tasksClick(view: View){
+        val intent = Intent(this,callendarActivity::class.java)
         startActivity(intent)
     }
 
-    fun tasksClick(view: View){
-        val intent = Intent(this,callendarActivity::class.java)
+    fun fotoClick(view: View){
+        val intent = Intent(this,Foto::class.java)
         startActivity(intent)
     }
 

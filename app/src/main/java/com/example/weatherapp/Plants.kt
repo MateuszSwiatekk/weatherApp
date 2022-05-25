@@ -22,27 +22,54 @@ class Plants : AppCompatActivity() {
 
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
-        var query=db.rawQuery("SELECT * FROM PLANTS",null)
+        val plantType = intent.getStringExtra("plant")
+        Toast.makeText(applicationContext, plantType, Toast.LENGTH_SHORT).show()
 
-        while(query.moveToNext()) {
-            var plantName=query.getString(1)
-            arrayListRepos.add(getString(plantName.toInt()))
-        }
-        val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
-            this,
-            android.R.layout.simple_dropdown_item_1line,
-            arrayListRepos
-        )
-        val listView=findViewById<ListView>(R.id.listView)
-        listView.adapter = adapter
+        if(plantType == "Garden") {
 
-        listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
-            val intent = Intent(this, Description::class.java).apply {
-                putExtra("plant_id", (position+1).toString())
+            var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE Home",null)
+            //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15 OFFSET 15" ,null)
+            while(query.moveToNext()) {
+                var plantName=query.getString(1)
+                arrayListRepos.add(getString(plantName.toInt()))
             }
-            startActivity(intent)
-        }
+            val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                arrayListRepos
+            )
+            val listView=findViewById<ListView>(R.id.listView)
+            listView.adapter = adapter
 
+            listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
+                val intent = Intent(this, Description::class.java).apply {
+                    putExtra("plant_id", (position+16).toString())
+                }
+                startActivity(intent)
+            }
+
+        }else {
+                var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE Garden",null)
+                //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15",null)
+                while(query.moveToNext()) {
+                    var plantName=query.getString(1)
+                    arrayListRepos.add(getString(plantName.toInt()))
+            }
+            val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                arrayListRepos
+            )
+            val listView=findViewById<ListView>(R.id.listView)
+            listView.adapter = adapter
+
+            listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
+                val intent = Intent(this, Description::class.java).apply {
+                    putExtra("plant_id", (position+1).toString())
+                }
+                startActivity(intent)
+            }
+        }
 
     }
 

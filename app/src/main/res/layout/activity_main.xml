@@ -23,7 +23,6 @@
             android:layout_weight="1"
             android:background="@color/whiteaf"
             android:drawableTop="@mipmap/ic_blackflower"
-            android:onClick="plantsClick"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -33,6 +32,7 @@
             android:layout_weight="1"
             android:background="@color/whiteaf"
             android:drawableTop="@mipmap/ic_blackphoto"
+            android:onClick="fotoClick"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.appcompat.widget.AppCompatButton
