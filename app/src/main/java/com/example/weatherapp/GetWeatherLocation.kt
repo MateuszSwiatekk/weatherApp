@@ -69,4 +69,8 @@ class GetWeatherLocation : AppCompatActivity() {
         finish()
         startActivity(intent)
     }
+
+//    override fun onBackPressed() {
+//        finish()
+//    }
 }

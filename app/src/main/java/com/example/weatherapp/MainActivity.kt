@@ -40,7 +40,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    override fun onBackPressed() {
-        finish()
+    fun myPlantsClick(view: View){
+        val intent=Intent(this,BrowsePlants::class.java)
+        startActivity(intent)
     }
+
+//  override fun onBackPressed() {
+//      super.onBackPressed()
+//   }
 }

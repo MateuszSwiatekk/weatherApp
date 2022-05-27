@@ -75,6 +75,8 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
 
         db?.execSQL("CREATE TABLE TASKS(TASKID INTEGER PRIMARY KEY AUTOINCREMENT,DATE TEXT, TASK TEXT)")
         db?.execSQL("INSERT INTO TASKS(DATE,TASK) VALUES ('25/4/2022','Fitonia B)')")
+
+        db?.execSQL("CREATE TABLE PLANTSOWNED(PLANTID INTEGER PRIMARY KEY AUTOINCREMENT,PLANTNAME TEXT, PLANTAMOUNT INTEGER)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {

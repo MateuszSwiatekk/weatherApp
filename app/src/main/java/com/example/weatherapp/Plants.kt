@@ -65,8 +65,8 @@ class Plants : AppCompatActivity() {
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java).apply {
-                    putExtra("plant_id", (position+1).toString())
-                }
+                       putExtra("plant_id", (position + 1).toString())
+                    }
                 startActivity(intent)
             }
         }

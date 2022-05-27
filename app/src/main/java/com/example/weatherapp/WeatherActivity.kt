@@ -34,7 +34,8 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this,MainActivity::class.java)
+        finishAffinity()
+        val intent=Intent(this,MainActivity::class.java)
         startActivity(intent)
     }
 
