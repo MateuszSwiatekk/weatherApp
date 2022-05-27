@@ -54,9 +54,9 @@ class Description : AppCompatActivity() {
                     "Added " + numberOfPlants.toString().toInt() + " plants",
                     Toast.LENGTH_SHORT
                 ).show()
-                var helper=DBHelper(applicationContext)
-                var db=helper.readableDatabase
-                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT) VALUES ("+R.string.plantDescription30+")")
+//                var helper=DBHelper(applicationContext)
+//                var db=helper.readableDatabase
+//                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT) VALUES ("+R.string.plantDescription30+")")
             }
     }
 
