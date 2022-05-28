@@ -19,7 +19,6 @@ class Description : AppCompatActivity() {
         setContentView(R.layout.activity_description)
         val plant_array = intent.getStringArrayExtra("plant_id")
         val plant_id= plant_array?.get(0)
-        val cos=plant_array?.get(1)
 
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
@@ -58,7 +57,8 @@ class Description : AppCompatActivity() {
                 ).show()
                 var helper=DBHelper(applicationContext)
                 var db=helper.readableDatabase
-                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT) VALUES ('"+plant_array?.get(1)+"',"+numberOfPlants+")")
+
+                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT,TYPE) VALUES ('"+plant_array?.get(1)+"',"+numberOfPlants+",'"+plant_array?.get(2)+"')")
             }
     }
 

@@ -20,14 +20,14 @@ class PlantTypeSelector : AppCompatActivity() {
 
     fun plantsClickGarden(view: View){
         val intent = Intent(this,Plants::class.java).apply {
-            putExtra("plant", "Home")
+            putExtra("plant", "Garden")
         }
         startActivity(intent)
     }
 
     fun plantsClickHome(view: View){
         val intent = Intent(this,Plants::class.java).apply {
-            putExtra("plant", "Garden")
+            putExtra("plant", "Home")
         }
         startActivity(intent)
     }

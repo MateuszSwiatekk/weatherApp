@@ -25,7 +25,7 @@ class Plants : AppCompatActivity() {
         val plantType = intent.getStringExtra("plant")
         Toast.makeText(applicationContext, plantType, Toast.LENGTH_SHORT).show()
 
-        if(plantType == "Garden") {
+        if(plantType == "Home") {
 
             var query=db.rawQuery("SELECT * FROM PLANTS WHERE PLANTTYPE LIKE "+R.string.plantType2,null)
             //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15 OFFSET 15" ,null)
@@ -44,7 +44,7 @@ class Plants : AppCompatActivity() {
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)
                 val element=listView.getItemAtPosition(position).toString()
-                intent.putExtra("plant_id", arrayOf((position+16).toString(),element))
+                intent.putExtra("plant_id", arrayOf((position+16).toString(),element,"Home"))
                 startActivity(intent)
             }
 
@@ -66,7 +66,7 @@ class Plants : AppCompatActivity() {
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)
                 val element=listView.getItemAtPosition(position).toString()
-                intent.putExtra("plant_id", arrayOf((position+1).toString(),element))
+                intent.putExtra("plant_id", arrayOf((position+1).toString(),element,"Garden"))
                 startActivity(intent)
             }
         }
