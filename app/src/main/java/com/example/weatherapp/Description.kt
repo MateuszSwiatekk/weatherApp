@@ -1,7 +1,5 @@
 package com.example.weatherapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -9,6 +7,7 @@ import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import android.widget.Toast.makeText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 class Description : AppCompatActivity() {
@@ -18,8 +17,10 @@ class Description : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_description)
-        val plant_id = intent.getStringExtra("plant_id")
-        makeText(applicationContext,plant_id,Toast.LENGTH_SHORT).show()
+        val plant_array = intent.getStringArrayExtra("plant_id")
+        val plant_id= plant_array?.get(0)
+        val cos=plant_array?.get(1)
+
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM DESCRIPTIONS WHERE DESCRIPTIONID ="+plant_id,null)
@@ -45,7 +46,8 @@ class Description : AppCompatActivity() {
 
         }
         fun addPlants(view: View){
-        val numberOfPlants=findViewById<EditText>(R.id.plantsNumber).text
+            val plant_array = intent.getStringArrayExtra("plant_id")
+            val numberOfPlants=findViewById<EditText>(R.id.plantsNumber).text
             if (numberOfPlants.isNullOrEmpty()||numberOfPlants.toString().toInt()==0)
                 makeText(applicationContext,"No plants added",Toast.LENGTH_SHORT).show()
             else {
@@ -54,9 +56,9 @@ class Description : AppCompatActivity() {
                     "Added " + numberOfPlants.toString().toInt() + " plants",
                     Toast.LENGTH_SHORT
                 ).show()
-//                var helper=DBHelper(applicationContext)
-//                var db=helper.readableDatabase
-//                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT) VALUES ("+R.string.plantDescription30+")")
+                var helper=DBHelper(applicationContext)
+                var db=helper.readableDatabase
+                db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT) VALUES ('"+plant_array?.get(1)+"',"+numberOfPlants+")")
             }
     }
 

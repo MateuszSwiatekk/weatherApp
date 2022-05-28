@@ -42,9 +42,9 @@ class Plants : AppCompatActivity() {
             listView.adapter = adapter
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
-                val intent = Intent(this, Description::class.java).apply {
-                    putExtra("plant_id", (position+16).toString())
-                }
+                val intent = Intent(this, Description::class.java)
+                val element=listView.getItemAtPosition(position).toString()
+                intent.putExtra("plant_id", arrayOf((position+16).toString(),element))
                 startActivity(intent)
             }
 
@@ -64,9 +64,9 @@ class Plants : AppCompatActivity() {
             listView.adapter = adapter
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
-                val intent = Intent(this, Description::class.java).apply {
-                       putExtra("plant_id", (position + 1).toString())
-                    }
+                val intent = Intent(this, Description::class.java)
+                val element=listView.getItemAtPosition(position).toString()
+                intent.putExtra("plant_id", arrayOf((position+1).toString(),element))
                 startActivity(intent)
             }
         }
