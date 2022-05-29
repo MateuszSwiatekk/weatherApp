@@ -6,23 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\msswi\.android\avd\Pixel_3a_API_29.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="USAQ95T4OFXGIBGA" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <targetSelectedWithDropDown>
-      <Target>
-        <type value="QUICK_BOOT_TARGET" />
-        <deviceKey>
-          <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\msswi\.android\avd\Pixel_3a_API_29.avd" />
-          </Key>
-        </deviceKey>
-      </Target>
-    </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-05-29T17:03:08.118488200Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-05-29T17:04:38.873240800Z" />
   </component>
 </project>
