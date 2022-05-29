@@ -2,12 +2,18 @@ package com.example.weatherapp
 
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Bitmap.CompressFormat
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import java.io.File
+import java.io.FileOutputStream
+import kotlin.random.Random
 
 
 class Foto : AppCompatActivity() {
@@ -23,6 +29,19 @@ class Foto : AppCompatActivity() {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
             fotoview.setImageBitmap(imageBitmap)
+            val root = Environment.getExternalStorageDirectory()
+            val file = File(root.absolutePath + "/DCIM/Plants/img"+ Random(1) +"4.jpg")
+            val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+            try {
+                file.createNewFile()
+                val ostream = FileOutputStream(file)
+                imageBitmap.compress(CompressFormat.JPEG, 100, ostream)
+                mediaScanIntent.setData(Uri.fromFile(file))
+                this.sendBroadcast(mediaScanIntent);
+                ostream.close()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
     }
 
