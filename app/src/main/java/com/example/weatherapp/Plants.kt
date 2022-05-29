@@ -35,6 +35,19 @@ class Plants : AppCompatActivity() {
             }
             plantsList.add(Plant(R.drawable.plant16,"Aglaonema Zmienna"))
             plantsList.add(Plant(R.drawable.plant17,"Ardizja Karbowana"))
+            plantsList.add(Plant(R.drawable.plant18,"Daktylowiec Niski"))
+            plantsList.add(Plant(R.drawable.plant19,"Echmea Wstęgowa"))
+            plantsList.add(Plant(R.drawable.plant20,"Fitonia"))
+            plantsList.add(Plant(R.drawable.plant21,"Haworsja"))
+            plantsList.add(Plant(R.drawable.plant22,"Kalanchoe Blossfelda"))
+            plantsList.add(Plant(R.drawable.plant23,"Kawa Arabska"))
+            plantsList.add(Plant(R.drawable.plant24,"Łosie rogi"))
+            plantsList.add(Plant(R.drawable.plant25,"Monstera Dziurawa"))
+            plantsList.add(Plant(R.drawable.plant26,"Pieprz Turecki"))
+            plantsList.add(Plant(R.drawable.plant27,"Starzec Rowleya"))
+            plantsList.add(Plant(R.drawable.plant28,"Storczyk Cymbidium"))
+            plantsList.add(Plant(R.drawable.plant29,"Trzykrotka Somalijska"))
+            plantsList.add(Plant(R.drawable.plant30,"Wężownica Gwinejska"))
             val customAdapter = CustomAdapter(this,R.layout.custom_list_row,plantsList)
             val listView=findViewById<ListView>(R.id.listView)
             listView.adapter = customAdapter
@@ -53,13 +66,24 @@ class Plants : AppCompatActivity() {
                     var plantName=query.getString(1)
                     arrayListRepos.add(getString(plantName.toInt()))
             }
-            val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
-                this,
-                android.R.layout.simple_dropdown_item_1line,
-                arrayListRepos
-            )
+            plantsList.add(Plant(R.drawable.plant1,"Begonia Bulwiasta"))
+            plantsList.add(Plant(R.drawable.plant2,"Cebulica Syberyjska"))
+            plantsList.add(Plant(R.drawable.plant3,"Dzwonek Irlandzki"))
+            plantsList.add(Plant(R.drawable.plant4,"Frezja"))
+            plantsList.add(Plant(R.drawable.plant5,"Galtonia Biaława"))
+            plantsList.add(Plant(R.drawable.plant6,"Goździk Brodaty"))
+            plantsList.add(Plant(R.drawable.plant7,"Hiacynt"))
+            plantsList.add(Plant(R.drawable.plant8,"Irys żółty"))
+            plantsList.add(Plant(R.drawable.plant9,"Kamasja"))
+            plantsList.add(Plant(R.drawable.plant10,"Naparstnica Purpurowa"))
+            plantsList.add(Plant(R.drawable.plant11,"Niezapominajka Błotna"))
+            plantsList.add(Plant(R.drawable.plant12,"Szafirek Armeński"))
+            plantsList.add(Plant(R.drawable.plant13,"Szafirek Groniasty"))
+            plantsList.add(Plant(R.drawable.plant14,"Tulipan"))
+            plantsList.add(Plant(R.drawable.plant15,"Zawilec wieńcowy"))
+            val customAdapter = CustomAdapter(this,R.layout.custom_list_row,plantsList)
             val listView=findViewById<ListView>(R.id.listView)
-            listView.adapter = adapter
+            listView.adapter = customAdapter
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)
