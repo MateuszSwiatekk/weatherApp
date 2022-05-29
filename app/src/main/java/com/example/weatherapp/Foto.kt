@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,10 @@ class Foto : AppCompatActivity() {
         fotobutton = findViewById<Button>(R.id.fotoButton)
         fotoview = findViewById<ImageView>(R.id.fotoView)
         super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==3 && resultCode== RESULT_OK){
+            val selectedImage=data?.data
+            fotoview.setImageURI(selectedImage)
+        }
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
             fotoview.setImageBitmap(imageBitmap)
@@ -60,5 +65,10 @@ class Foto : AppCompatActivity() {
                 startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
             }
         }
+    }
+
+    fun viewImagesClick(view: View){
+        val intent=Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent,3)
     }
 }
