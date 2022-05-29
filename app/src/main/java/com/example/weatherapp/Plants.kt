@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 class Plants : AppCompatActivity() {
 
     private val arrayListRepos = ArrayList<String>()
-
+    val plantsList= ArrayList<Plant>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plants)
@@ -33,13 +33,11 @@ class Plants : AppCompatActivity() {
                 var plantName=query.getString(1)
                 arrayListRepos.add(getString(plantName.toInt()))
             }
-            val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
-                this,
-                android.R.layout.simple_dropdown_item_1line,
-                arrayListRepos
-            )
+            plantsList.add(Plant(R.drawable.plant16,"Aglaonema Zmienna"))
+            plantsList.add(Plant(R.drawable.plant17,"Ardizja Karbowana"))
+            val customAdapter = CustomAdapter(this,R.layout.custom_list_row,plantsList)
             val listView=findViewById<ListView>(R.id.listView)
-            listView.adapter = adapter
+            listView.adapter = customAdapter
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)

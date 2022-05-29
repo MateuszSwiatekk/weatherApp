@@ -8,15 +8,11 @@ import android.widget.ListView
 class BrowsePlants : AppCompatActivity() {
     private val arrayListGardenPlants = ArrayList<String>()
     private val arrayListHomePlants = ArrayList<String>()
-    val plantsList= ArrayList<Plant>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browse_plants)
 
-        plantsList.add(Plant(R.drawable.ic_launcher_foreground,"tescik"))
-        val customAdapter = CustomAdapter(this,R.layout.custom_list_row,plantsList)
-        val list=findViewById<ListView>(R.id.testList)
-        list.adapter=customAdapter
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM PLANTSOWNED WHERE TYPE='Garden'",null)
