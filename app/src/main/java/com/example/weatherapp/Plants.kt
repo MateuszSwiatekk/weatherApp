@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.view.get
 
 class Plants : AppCompatActivity() {
 
@@ -54,8 +55,9 @@ class Plants : AppCompatActivity() {
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)
-                val element=listView.getItemAtPosition(position).toString()
-                intent.putExtra("plant_id", arrayOf((position+16).toString(),element,"Home"))
+                //val element=listView.getItemAtPosition(position).toString()
+                val plant :Plant = plantsList[position]
+                intent.putExtra("plant_id", arrayOf((position+16).toString(),plant.Name,"Home"))
                 startActivity(intent)
             }
 
@@ -87,8 +89,9 @@ class Plants : AppCompatActivity() {
 
             listView.setOnItemClickListener { parent, view, position, id ->  //clicking an item of list view launches new activity
                 val intent = Intent(this, Description::class.java)
-                val element=listView.getItemAtPosition(position).toString()
-                intent.putExtra("plant_id", arrayOf((position+1).toString(),element,"Garden"))
+                //val element=listView.getItemAtPosition(position).toString()
+                val plant :Plant = plantsList[position]
+                intent.putExtra("plant_id", arrayOf((position+1).toString(),plant.Name,"Garden"))
                 startActivity(intent)
             }
         }
