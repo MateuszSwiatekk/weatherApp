@@ -13,6 +13,8 @@ class BrowsePlants : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browse_plants)
 
+        supportActionBar?.hide()
+
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM PLANTSOWNED WHERE TYPE='Garden'",null)
