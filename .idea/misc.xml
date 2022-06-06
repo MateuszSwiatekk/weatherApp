@@ -13,7 +13,9 @@
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/drawable/background.xml" value="0.1" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/drawable/button.xml" value="0.1" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_browse_plants.xml" value="0.21557971014492755" />
-        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_description.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_callendar.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_date.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_description.xml" value="0.2" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_foto.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_get_weather_location.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/grzes/AndroidStudioProjects/weatherApp/app/src/main/res/layout/activity_light_sensor.xml" value="0.21557971014492755" />

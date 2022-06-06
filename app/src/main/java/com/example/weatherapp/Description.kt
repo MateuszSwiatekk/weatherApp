@@ -20,14 +20,15 @@ class Description : AppCompatActivity() {
         val plant_array = intent.getStringArrayExtra("plant_id")
         val plant_id= plant_array?.get(0)
 
-        supportActionBar?.hide()
+
 
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         var query=db.rawQuery("SELECT * FROM DESCRIPTIONS WHERE DESCRIPTIONID ="+plant_id,null)
         val actionBar = supportActionBar
+        supportActionBar?.hide()
         actionBar!!.title = "Plant description"
-        window.statusBarColor = ContextCompat.getColor(this, R.color.green)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.whiteaf)
 
         //if(query.moveToNext())
         //arrayListRepos.add(query.getString(1))
