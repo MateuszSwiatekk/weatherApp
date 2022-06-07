@@ -22,12 +22,12 @@ class Description : AppCompatActivity() {
         R.drawable.plant27,R.drawable.plant28,R.drawable.plant29,R.drawable.plant30)
 
         val image=findViewById<ImageView>(R.id.imageView8)
-
+        val nameDesc=findViewById<Button>(R.id.plantName)
         val plant_array = intent.getStringArrayExtra("plant_id")
         val plant_id= plant_array?.get(0)
         var img=plant_id?.toInt()
-        val type=plant_array?.get(2)
-
+        val name=plant_array?.get(1)
+        nameDesc.text = name
             if (img != null) {
                 image.setImageResource(plantImages[img-1])
             }
