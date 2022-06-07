@@ -17,6 +17,10 @@ class Description : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_description)
+
+        val plantImages= arrayOf(R.drawable.plant1,R.drawable.plant2,R.drawable.plant3,R.drawable.plant4,R.drawable.plant5,R.drawable.plant6,
+        R.drawable.plant7,R.drawable.plant8,R.drawable.plant8,R.drawable.plant9)
+
         val plant_array = intent.getStringArrayExtra("plant_id")
         val plant_id= plant_array?.get(0)
 

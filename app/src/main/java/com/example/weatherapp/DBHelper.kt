@@ -1,10 +1,8 @@
 package com.example.weatherapp
 
 import android.content.Context
-import android.content.res.Resources
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import kotlin.coroutines.coroutineContext
 
 class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
 
