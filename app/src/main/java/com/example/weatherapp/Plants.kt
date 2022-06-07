@@ -11,7 +11,7 @@ import androidx.core.view.get
 
 class Plants : AppCompatActivity() {
 
-    private val arrayListRepos = ArrayList<String>()
+    private val arrayListPlantNames = ArrayList<String>()
     val plantsList= ArrayList<Plant>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ class Plants : AppCompatActivity() {
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
         val plantType = intent.getStringExtra("plant")
-        Toast.makeText(applicationContext, plantType, Toast.LENGTH_SHORT).show()
+        //Toast.makeText(applicationContext, plantType, Toast.LENGTH_SHORT).show()
 
         if(plantType == "Home") {
 
@@ -32,7 +32,7 @@ class Plants : AppCompatActivity() {
             //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15 OFFSET 15" ,null)
             while(query.moveToNext()) {
                 var plantName=query.getString(1)
-                arrayListRepos.add(getString(plantName.toInt()))
+                arrayListPlantNames.add(getString(plantName.toInt()))
             }
             plantsList.add(Plant(R.drawable.plant16,"Aglaonema Zmienna"))
             plantsList.add(Plant(R.drawable.plant17,"Ardizja Karbowana"))
@@ -66,7 +66,7 @@ class Plants : AppCompatActivity() {
                 //var query=db.rawQuery("SELECT * FROM PLANTS LIMIT 15",null)
                 while(query.moveToNext()) {
                     var plantName=query.getString(1)
-                    arrayListRepos.add(getString(plantName.toInt()))
+                    arrayListPlantNames.add(getString(plantName.toInt()))
             }
             plantsList.add(Plant(R.drawable.plant1,"Begonia Bulwiasta"))
             plantsList.add(Plant(R.drawable.plant2,"Cebulica Syberyjska"))

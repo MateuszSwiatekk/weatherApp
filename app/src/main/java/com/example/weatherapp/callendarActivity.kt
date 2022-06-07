@@ -18,7 +18,6 @@ class callendarActivity : AppCompatActivity() {
             callendar.setOnDateChangeListener(object:CalendarView.OnDateChangeListener{
                 override fun onSelectedDayChange(p0: CalendarView, year: Int, month: Int, day: Int) {
                     val date=day.toString()+"/"+(month+1).toString()+"/"+year.toString()
-                    makeText(applicationContext,date,Toast.LENGTH_SHORT).show()
                     val intent = Intent(applicationContext,dateActivity::class.java).apply {
                         putExtra("date",date)
                     }

@@ -10,7 +10,7 @@ import android.widget.Toast
 import android.widget.Toast.makeText
 
 class dateActivity : AppCompatActivity() {
-    private val arrayListRepos = ArrayList<String>()
+    private val arrayListTask = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         var helper=DBHelper(applicationContext)
         var db=helper.readableDatabase
@@ -23,13 +23,13 @@ class dateActivity : AppCompatActivity() {
         while(query.moveToNext()) {
             if(date==query.getString(1)){
                 var task = query.getString(2)
-                arrayListRepos.add(task)
+                arrayListTask.add(task)
                 }
         }
         val adapter: ArrayAdapter<String> = ArrayAdapter(   //array adapter, used to drop items from arraylist of repos to list view
             this,
             android.R.layout.simple_list_item_1,
-            arrayListRepos
+            arrayListTask
         )
         val listView=findViewById<ListView>(R.id.taskList)
         listView.adapter = adapter

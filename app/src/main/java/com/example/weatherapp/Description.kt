@@ -10,6 +10,8 @@ import androidx.core.content.ContextCompat
 class Description : AppCompatActivity() {
 
     private val arrayListRepos = ArrayList<String>()
+    val characteristicList= ArrayList<Plant>()
+    val careList=ArrayList<Plant>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +42,6 @@ class Description : AppCompatActivity() {
         actionBar!!.title = "Plant description"
         window.statusBarColor = ContextCompat.getColor(this, R.color.whiteaf)
 
-        //if(query.moveToNext())
-        //arrayListRepos.add(query.getString(1))
-
         while(query.moveToNext()) {
             var description=query.getString(1)
             arrayListRepos.add(getString(description.toInt()))
@@ -52,11 +51,37 @@ class Description : AppCompatActivity() {
             this,
             android.R.layout.simple_list_item_1,
             arrayListRepos
+
+
        )
        val listView=findViewById<ListView>(R.id.listView2)
        listView.adapter = adapter
 
+        var query2=db.rawQuery("SELECT * FROM CARE WHERE CAREID = "+plant_id,null)
+        if(query2.moveToNext()){
+            var diff=query2.getString(1)
+            var sun=query2.getString(2)
+            var toxic=query2.getString(3)
+            var water=query2.getString(4)
+            var watering=query2.getString(5)
+            var fertilizer=query2.getString(6)
+
+            characteristicList.add(Plant(R.drawable.piramida,diff))
+            characteristicList.add(Plant(R.drawable.slonce,sun))
+            characteristicList.add(Plant(R.drawable.czaszka,toxic))
+            characteristicList.add(Plant(R.drawable.kropla,water))
+            careList.add(Plant(R.drawable.konewka,watering))
+            careList.add(Plant(R.drawable.worek,fertilizer))
         }
+        val customAdapter = CustomAdapter(this,R.layout.custom_list_row,characteristicList)
+        val listView2=findViewById<ListView>(R.id.listView4)
+        listView2.adapter = customAdapter
+        val customAdapter2 = CustomAdapter(this,R.layout.custom_list_row,careList)
+        val listView3=findViewById<ListView>(R.id.listView3)
+        listView3.adapter=customAdapter2
+
+
+    }
         fun addPlants(view: View){
             val plant_array = intent.getStringArrayExtra("plant_id")
             val numberOfPlants=findViewById<EditText>(R.id.plantsNumber).text
@@ -73,7 +98,7 @@ class Description : AppCompatActivity() {
 
                 db?.execSQL("INSERT INTO PLANTSOWNED(PLANTNAME,PLANTAMOUNT,TYPE) VALUES ('"+plant_array?.get(1)+"',"+numberOfPlants+",'"+plant_array?.get(2)+"')")
             }
-    }
+        }
 
 
     }
