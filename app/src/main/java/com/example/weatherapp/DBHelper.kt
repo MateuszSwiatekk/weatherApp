@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
 
     override fun onCreate(db: SQLiteDatabase?) {
+        //PLANTS
         db?.execSQL("CREATE TABLE PLANTS(PLANTID INTEGER PRIMARY KEY AUTOINCREMENT,PLANTNAME TEXT, PLANTTYPE TEXT)")
         db?.execSQL("INSERT INTO PLANTS(PLANTNAME, PLANTTYPE) VALUES ("+R.string.plantName1+","+R.string.plantType1+")")
         db?.execSQL("INSERT INTO PLANTS(PLANTNAME, PLANTTYPE) VALUES ("+R.string.plantName2+","+R.string.plantType1+")")
@@ -38,7 +39,7 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
         db?.execSQL("INSERT INTO PLANTS(PLANTNAME, PLANTTYPE) VALUES ("+R.string.plantName28+","+R.string.plantType2+")")
         db?.execSQL("INSERT INTO PLANTS(PLANTNAME, PLANTTYPE) VALUES ("+R.string.plantName29+","+R.string.plantType2+")")
         db?.execSQL("INSERT INTO PLANTS(PLANTNAME, PLANTTYPE) VALUES ("+R.string.plantName30+","+R.string.plantType2+")")
-
+        //DESCRIPTIONS
         db?.execSQL("CREATE TABLE DESCRIPTIONS(DESCRIPTIONID INTEGER PRIMARY KEY AUTOINCREMENT,DESCRIPTION TEXT)")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription1+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription2+")")
@@ -70,13 +71,45 @@ class DBHelper(context: Context): SQLiteOpenHelper(context,"PLANTSDB",null,2) {
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription28+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription29+")")
         db?.execSQL("INSERT INTO DESCRIPTIONS(DESCRIPTION) VALUES ("+R.string.plantDescription30+")")
-
+        //TASKS
         db?.execSQL("CREATE TABLE TASKS(TASKID INTEGER PRIMARY KEY AUTOINCREMENT,DATE TEXT, TASK TEXT)")
         db?.execSQL("INSERT INTO TASKS(DATE,TASK) VALUES ('25/4/2022','Fitonia B)')")
-
+        //PLANTSOWNED
         db?.execSQL("CREATE TABLE PLANTSOWNED(PLANTID INTEGER PRIMARY KEY AUTOINCREMENT,PLANTNAME TEXT, PLANTAMOUNT INTEGER,TYPE TEXT)")
-    }
+        //CARE
+        db?.execSQL("CREATE TABLE CARE(CAREID INTEGER PRIMARY KEY AUTOINCREMENT,DIFFICULTY TEXT, SUN TEXT, TOXIC TEXT, WATER TEXT, WATERING TEXT, FERTILIZE TEXT)")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Part sun',            'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Not toxic', 'Medium', 'Podlewanie - co 3 dni', 'Nawożenie - co 7 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Full sun',            'Not toxic', 'Medium', 'Podlewanie - co 6 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Shade',               'Not toxic', 'Medium', 'Podlewanie - co 5 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Part sun',            'Not toxic', 'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun',            'Not toxic', 'Medium', 'Podlewanie - co 14 dni','Nawożenie - co 14 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun',            'Not toxic', 'Medium', 'Podlewanie - co 3 dni', 'Nawożenie - co 14 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Part sun',            'Not toxic', 'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Part sun / Shade',    'Toxic',     'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 14 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun',            'Toxic',     'Medium', 'Podlewanie - co 3 dni', 'Nawożenie - co 7 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Hard',  'Full sun',            'Toxic',     'Medium', 'Podlewanie - co 14 dni','Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Not toxic', 'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Full sun',            'Not toxic', 'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Part sun',            'Toxic',     'Medium', 'Podlewanie - co 3 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Hard',  'Full sun',            'Not toxic', 'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun',            'Toxic',     'Medium', 'Podlewanie - co 2 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Part sun',            'Not toxic', 'Medium', 'Podlewanie - co 6 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 28 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 1 dni', 'Nawożenie - co 14 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Easy',  'Full sun',            'Toxic',     'Medium', 'Podlewanie - co 4 dni', 'Nawożenie - co 60 dni')")
+        db?.execSQL("INSERT INTO CARE(DIFFICULTY, SUN, TOXIC, WATER, WATERING, FERTILIZE) VALUES ('Medium','Full sun / Part sun', 'Toxic',     'Medium', 'Podlewanie - co 7 dni', 'Nawożenie - co 24 dni')")
 
+        }
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
 
     }
